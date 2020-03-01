@@ -5,17 +5,16 @@ image_thumbs_loc: "/images/thumbs"
 google_analytics: "UA-159402018-1"
 
 # UI configs
-title: "Karlemstrand Photography"
+title: "Photography by Roderick karlemstrand"
 subtitle: "See the world through my eyes!"
 author: "2020 Roderick Karlemstrand All Rights Reserved."
 header:
- title: "Photography by Roderick karlemstrand"
+ title: "Karlemstrand Photography"
  subtitle: "Just another photo enthusiast's expensive hobby"
 footer:
- name: "demo footer"
- bio: "footer bio."
- github: "github"
-web_design: "web design"
+ name: "Roderick Karlemstrand"
+ bio: "I work full-time as an IT Consultant at a state owned financial company but can easily transform to a photo enthusiast after work."
+
 social_urls:
   facebook: "https://www.facebook.com/Roderick.Lindsberg.Karlemstrand"
   linkedin: "http://linkedin.com/in/roderick-karlemstrand/"
