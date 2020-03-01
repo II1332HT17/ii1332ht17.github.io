@@ -2,11 +2,13 @@
 <html>
 <head>
     {% include header.html %}
+    <link rel="canonical" href="{{ page.url | prepend: site.url }}">
+    <meta name="description" content="An IT consultant at finance industry trying to impress photography professionals with some showcase photos">
 </head>
 <body>
 
     {{ content }}
-    
+
     {% include footer.html %}
 </body>
 </html>
