@@ -19,3 +19,6 @@ social_urls:
   facebook: "https://www.facebook.com/Roderick.Lindsberg.Karlemstrand"
   linkedin: "http://linkedin.com/in/roderick-karlemstrand/"
   github: "https://www.github.com/rlindsberg"
+
+plugins:
+  - jekyll-gzip
