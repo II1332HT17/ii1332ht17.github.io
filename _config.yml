@@ -1,5 +1,5 @@
 # Base configs
-baseurl: "https://photography.karlemstrand.com"
+baseurl: "https://photography.karlemstrand-test.cf"
 image_fulls_loc: "/images/fulls"
 image_thumbs_loc: "/images/thumbs"
 google_analytics: "UA-159402018-1"
