@@ -352,6 +352,9 @@
             }
         }
 
+        console.log("Printing img.src\n");
+        console.log(img.src);
+
         if (img.src) {
             if (/^data\:/i.test(img.src)) { // Data URI
                 var arrayBuffer = base64ToArrayBuffer(img.src);
@@ -368,16 +371,20 @@
             } else {
                 var http = new XMLHttpRequest();
                 http.onload = function() {
+                    console.log("\nPrinting this.status\n");
+                    console.log(this.status);
                     if (this.status == 200 || this.status === 0) {
                         handleBinaryFile(http.response);
                     } else {
                         throw "Could not load image";
                     }
                     http = null;
+                    console.log("http is set to null\n");
                 };
                 http.open("GET", img.src, true);
                 http.responseType = "arraybuffer";
                 http.send(null);
+                console.log("http.send null\n");
             }
         } else if (window.FileReader && (img instanceof window.Blob || img instanceof window.File)) {
             var fileReader = new FileReader();
@@ -759,7 +766,7 @@
         if (!imageHasData(img)) return;
         return img.exifdata[tag];
     }
-    
+
     EXIF.getIptcTag = function(img, tag) {
         if (!imageHasData(img)) return;
         return img.iptcdata[tag];
@@ -777,7 +784,7 @@
         }
         return tags;
     }
-    
+
     EXIF.getAllIptcTags = function(img) {
         if (!imageHasData(img)) return {};
         var a,
