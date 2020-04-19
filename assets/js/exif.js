@@ -388,7 +388,7 @@
                 };
                 http.open("GET", img.src, true);
                 http.responseType = "arraybuffer";
-                http.send(null);
+                
                 console.log("http.send null\n");
             }
             console.log("if (img.src) done ");
