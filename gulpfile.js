@@ -38,13 +38,7 @@ gulp.task('sass:watch', function () {
     gulp.watch('./assets/sass/**/*.scss', ['sass']);
 });
 
-// minify js
-gulp.task('minify-js', function () {
-    return gulp.src('./assets/js/main.js')
-        .pipe(uglify())
-        .pipe(rename({basename: 'main.min'}))
-        .pipe(gulp.dest('./assets/js'));
-});
+
 
 // default task
 gulp.task('default', ['del']);
