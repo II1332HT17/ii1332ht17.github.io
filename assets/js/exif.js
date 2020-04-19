@@ -389,7 +389,6 @@
                 http.open("GET", img.src, true);
                 http.responseType = "arraybuffer";
                 
-                console.log("http.send null\n");
             }
             console.log("if (img.src) done ");
         } else if (window.FileReader && (img instanceof window.Blob || img instanceof window.File)) {
