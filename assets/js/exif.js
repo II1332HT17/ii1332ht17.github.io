@@ -357,10 +357,14 @@
 
         if (img.src) {
             if (/^data\:/i.test(img.src)) { // Data URI
+                console.log("data uri\n");
+
                 var arrayBuffer = base64ToArrayBuffer(img.src);
                 handleBinaryFile(arrayBuffer);
 
             } else if (/^blob\:/i.test(img.src)) { // Object URL
+                console.log("obj url\n");
+
                 var fileReader = new FileReader();
                 fileReader.onload = function(e) {
                     handleBinaryFile(e.target.result);
@@ -369,6 +373,7 @@
                     fileReader.readAsArrayBuffer(blob);
                 });
             } else {
+                console.log("new xhr");
                 var http = new XMLHttpRequest();
                 http.onload = function() {
                     console.log("\nPrinting this.status\n");
@@ -386,6 +391,7 @@
                 http.send(null);
                 console.log("http.send null\n");
             }
+            console.log("if (img.src) done ");
         } else if (window.FileReader && (img instanceof window.Blob || img instanceof window.File)) {
             var fileReader = new FileReader();
             fileReader.onload = function(e) {
