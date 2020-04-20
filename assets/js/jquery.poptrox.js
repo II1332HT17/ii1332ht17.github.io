@@ -540,6 +540,7 @@
 
             })
             .on('poptrox_close', function() {
+                console.log("POPUP CLOSED!!!")
 
                 if (isLocked
                     &&	!settings.usePopupForceClose)
