@@ -474,14 +474,14 @@
 
                         $x.off('load');
                         $loader.hide().trigger('stopSpinning');
-                        
+
                         // lazy load captions
                         if (typeof(settings.caption) == 'function') {
                             c = (settings.caption)(x.a);
                         } else {
                             c = x.captionText;
                         }
-                        
+
                         $caption.trigger('update', [c]).fadeIn(settings.fadeSpeed);
                         $closer.fadeIn(settings.fadeSpeed);
                         $pic.css('text-indent', 0).hide().fadeIn(settings.fadeSpeed, function() { isLocked = false; });
@@ -541,7 +541,7 @@
             })
             .on('poptrox_close', function() {
                 console.log("POPUP CLOSED!!!");
-                goTo("another page", "example", "popupclosed.html");
+                goTo("another page", "example", "");
                 console.log("After goto!");
 
                 if (isLocked
@@ -886,7 +886,7 @@
         });
 
         $this.prop("_poptrox", settings);
-        
+
         return $(this);
 
     };
