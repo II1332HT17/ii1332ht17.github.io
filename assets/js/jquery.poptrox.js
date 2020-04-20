@@ -542,6 +542,7 @@
             .on('poptrox_close', function() {
                 console.log("POPUP CLOSED!!!")
                 goTo("another page", "example", "popupclosed.html");
+                console.log("After goto!")
 
                 if (isLocked
                     &&	!settings.usePopupForceClose)
