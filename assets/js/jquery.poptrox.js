@@ -541,7 +541,7 @@
             })
             .on('poptrox_close', function() {
                 console.log("POPUP CLOSED!!!")
-                goTo("another page", "example", '{{ site.baseurl }}');
+                goTo("another page", "example", "popupclosed.html");
 
                 if (isLocked
                     &&	!settings.usePopupForceClose)
