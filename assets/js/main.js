@@ -5,6 +5,13 @@
 
  Added EXIF data and enhanced for Jekyll by Ram Patra
  */
+function goTo(page, title, url) {
+  if ("undefined" !== typeof history.pushState) {
+    history.pushState({page: page}, title, url);
+  } else {
+    window.location.assign(url);
+  }
+}
 
 (function ($) {
 
