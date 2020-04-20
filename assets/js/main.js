@@ -6,6 +6,7 @@
  Added EXIF data and enhanced for Jekyll by Ram Patra
  */
 function goTo(page, title, url) {
+  console.log("GOTO NEW URL\n")
   if ("undefined" !== typeof history.pushState) {
     history.pushState({page: page}, title, url);
   } else {
