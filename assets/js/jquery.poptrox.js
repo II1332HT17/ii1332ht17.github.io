@@ -40,7 +40,7 @@ function goTo(page, title, url) {
         // Settings
         var settings = $.extend({
 
-            preload:						true,						// If true, preload fullsize images in the background
+            preload:						false,						// If true, preload fullsize images in the background
             baseZIndex:						1000,						// Base Z-Index
             fadeSpeed:						300,						// Global fade speed
             overlayColor:					'#000000',					// Overlay color
@@ -420,7 +420,7 @@ function goTo(page, title, url) {
                 let new_img_url = queue[index].src;
                 let url_array = new_img_url.split("/")
                 // ["https:", "", "photography.karlemstrand.com", "images", "fulls", "xxx.jpg"]
-                let new_img = url_array[5]
+                let new_img = "?img_url" + url_array[5]
 
                 goTo("another page", "example", new_img);
 
