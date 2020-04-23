@@ -885,6 +885,27 @@
 
 
         });
+
+        //queue is loaded
+        //get url parameter
+        let queryString = window.location.search;
+        let urlParams = new URLSearchParams(queryString);
+        let img_url = urlParams.get('img_url')
+
+        console.log("The image url I read is: " + img_url + "\n");
+        console.log("https://photography.karlemstrand-test.cf" + img_url);
+
+        for (const i in queue) {
+            console.log(i.src);
+        }
+
+        //console.log("the position is " + pos);
+
+
+
+
+
+
         console.log(queue);
         debugger;
 
