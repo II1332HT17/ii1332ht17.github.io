@@ -415,6 +415,8 @@ function goTo(page, title, url) {
 
             })
             .on('poptrox_switch', function(e, index, ignoreLock) {
+                console.log("on switch");
+                console.log(index);
 
                 var x, img, c;
 
