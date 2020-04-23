@@ -397,7 +397,7 @@
                     .fadeTo(settings.fadeSpeed, 1.0, function() {
                         $popup.trigger('poptrox_switch', [index, true]);
                     });
-                debugger;
+                //debugger;
             })
             .on('poptrox_switch', function(e, index, ignoreLock) {
 
@@ -540,7 +540,7 @@
 
             })
             .on('poptrox_close', function() {
-                
+
                 goTo("another page", "example", "/");
 
 
@@ -868,8 +868,8 @@
                 x.src = 'http:' + x.src;
 
             queue.push(x);
-            console.log("logging x:\n")
-            console.log(x)
+            console.log("logging x:\n");
+            console.log(x);
 
             i.attr('title', '');
 
@@ -882,6 +882,8 @@
                     e.stopPropagation();
 
                     $popup.trigger('poptrox_open', [index]);
+                    console.log("loggint queue\n");
+                    console.log(queue);
 
                 });
 
