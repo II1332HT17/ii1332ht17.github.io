@@ -397,7 +397,7 @@
                     .fadeTo(settings.fadeSpeed, 1.0, function() {
                         $popup.trigger('poptrox_switch', [index, true]);
                     });
-
+                debugger;
             })
             .on('poptrox_switch', function(e, index, ignoreLock) {
 
