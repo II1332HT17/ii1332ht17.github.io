@@ -868,6 +868,8 @@
                 x.src = 'http:' + x.src;
 
             queue.push(x);
+            console.log("logging x:\n")
+            console.log(x)
 
             i.attr('title', '');
 
