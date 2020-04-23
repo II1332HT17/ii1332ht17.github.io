@@ -919,7 +919,7 @@ function goTo(page, title, url) {
         let img_url = urlParams.get('img_url');
         let full_img_url = "https://photography.karlemstrand-test.cf" + img_url;
 
-        for (const i in queue) {
+        for (let i = 0; i < queue.length; i++) {
             console.log("queue is loaded, queue is \n")
             console.log(queue);
             console.log("current index is " + i);
