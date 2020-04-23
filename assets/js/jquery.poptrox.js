@@ -874,7 +874,12 @@
             let img_url = urlParams.get('img_url')
 
             console.log("The image url I read is: " + img_url + "\n");
-            let pos = queue.indexOf("{{ site.baseurl }}{{ site.image_fulls_loc }}/" + img_url);
+            console.log("I save the url as: " + "{{ site.baseurl }}{{ site.image_fulls_loc }}/" + img_url);
+
+            for (const i in queue) {
+                console.log(i.src);
+            }
+
             console.log("the position is " + pos);
 
 
