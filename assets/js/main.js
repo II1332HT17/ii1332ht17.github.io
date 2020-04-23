@@ -6,7 +6,7 @@
  Added EXIF data and enhanced for Jekyll by Ram Patra
  */
 function goTo(page, title, url) {
-  console.log("GOTO NEW URL\n")
+  //console.log("GOTO NEW URL\n")
   if ("undefined" !== typeof history.pushState) {
     history.pushState({page: page}, title, url);
   } else {
@@ -33,7 +33,7 @@ function goTo(page, title, url) {
         console.log("The image url I read is: " + img_url + "\n");
 
 
-        
+
         var $window = $(window),
             $body = $('body'),
             $wrapper = $('#wrapper');
@@ -285,7 +285,7 @@ function goTo(page, title, url) {
                 var $image_img = $a.children('img');
                 var data = exifDatas[$image_img.data('name')];
                 if (data === undefined) {
-                    // EXIF data                    
+                    // EXIF data
                     EXIF.getData($image_img[0], function () {
                         data = exifDatas[$image_img.data('name')] = getExifDataMarkup(this);
                     });
