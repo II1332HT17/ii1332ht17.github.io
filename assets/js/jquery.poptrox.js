@@ -397,7 +397,7 @@
                     .fadeTo(settings.fadeSpeed, 1.0, function() {
                         $popup.trigger('poptrox_switch', [index, true]);
                     });
-
+                //debugger;
             })
             .on('poptrox_switch', function(e, index, ignoreLock) {
 
@@ -540,9 +540,9 @@
 
             })
             .on('poptrox_close', function() {
-                console.log("POPUP CLOSED!!!");
+
                 goTo("another page", "example", "/");
-                console.log("After goto!");
+
 
                 if (isLocked
                     &&	!settings.usePopupForceClose)
@@ -883,7 +883,36 @@
 
                 });
 
+
         });
+
+        //queue is loaded
+        //get url parameter
+        let queryString = window.location.search;
+        let urlParams = new URLSearchParams(queryString);
+        let img_url = urlParams.get('img_url')
+        let full_img_url = "https://photography.karlemstrand-test.cf" + img_url;
+
+        console.log("The image url I read is: " + img_url + "\n");
+        console.log("https://photography.karlemstrand-test.cf" + img_url);
+
+        for (const i in queue) {
+            if (full_img_url === queue[i].src){
+                $popup.trigger('poptrox_open', [i]);
+                break;
+            }
+
+        }
+
+        //console.log("the position is " + pos);
+
+
+
+
+
+
+        console.log(queue);
+        debugger;
 
         $this.prop("_poptrox", settings);
 
