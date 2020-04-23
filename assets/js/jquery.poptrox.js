@@ -891,16 +891,17 @@
         let queryString = window.location.search;
         let urlParams = new URLSearchParams(queryString);
         let img_url = urlParams.get('img_url')
+        let full_img_url = "https://photography.karlemstrand-test.cf" + img_url;
 
         console.log("The image url I read is: " + img_url + "\n");
         console.log("https://photography.karlemstrand-test.cf" + img_url);
 
         for (const i in queue) {
-            if (img_url == console.log(queue[i].src)){
+            if (full_img_url === queue[i].src){
                 $popup.trigger('poptrox_open', [i]);
                 break;
             }
-            
+
         }
 
         //console.log("the position is " + pos);
