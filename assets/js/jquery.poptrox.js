@@ -415,6 +415,19 @@ function goTo(page, title, url) {
 
             })
             .on('poptrox_switch', function(e, index, ignoreLock) {
+                console.log("on switch");
+                console.log(index);
+                let new_img_url = queue[index].src;
+                let url_array = new_img_url.split("/")
+                // ["https:", "", "photography.karlemstrand.com", "images", "fulls", "xxx.jpg"]
+                let new_img = "?img_url=/images/fulls/" + url_array[5]
+
+                goTo("another page", "example", new_img);
+
+                console.log("after goto")
+                console.log(queue);
+                console.log("I am switching to ..." + new_img_url);
+
 
                 var x, img, c;
 
@@ -904,9 +917,12 @@ function goTo(page, title, url) {
         let queryString = window.location.search;
         let urlParams = new URLSearchParams(queryString);
         let img_url = urlParams.get('img_url');
-        let full_img_url = "https://photography.karlemstrand.com" + img_url;
+        let full_img_url = "https://photography.karlemstrand-test.cf" + img_url;
 
-        for (const i in queue) {
+        for (let i = 0; i < queue.length; i++) {
+            console.log("queue is loaded, queue is \n")
+            console.log(queue);
+            console.log("current index is " + i);
             if (full_img_url === queue[i].src){
                 $popup.trigger('poptrox_open', [i]);
                 break;
