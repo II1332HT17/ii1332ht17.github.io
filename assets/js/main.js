@@ -5,14 +5,6 @@
 
  Added EXIF data and enhanced for Jekyll by Ram Patra
  */
-function goTo(page, title, url) {
-  //console.log("GOTO NEW URL\n")
-  if ("undefined" !== typeof history.pushState) {
-    history.pushState({page: page}, title, url);
-  } else {
-    window.location.assign(url);
-  }
-}
 
 (function ($) {
 
@@ -25,7 +17,6 @@ function goTo(page, title, url) {
     });
 
     $(function () {
-
 
         var $window = $(window),
             $body = $('body'),
@@ -262,11 +253,9 @@ function goTo(page, title, url) {
                         $image.trigger('click');
                     });
 
-            // Fill exif data, when image is loaded
-            $image_img[0].addEventListener("load", function() {
-                EXIF.getData($image_img[0], function () {
-                    exifDatas[$image_img.data('name')] = getExifDataMarkup(this);
-                });
+            // EXIF data
+            EXIF.getData($image_img[0], function () {
+                exifDatas[$image_img.data('name')] = getExifDataMarkup(this);
             });
 
         });
