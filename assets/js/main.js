@@ -25,13 +25,6 @@ function goTo(page, title, url) {
     });
 
     $(function () {
-        //get url parameter
-        let queryString = window.location.search;
-        let urlParams = new URLSearchParams(queryString);
-        let img_url = urlParams.get('img_url')
-
-        console.log("The image url I read is: " + img_url + "\n");
-
 
 
         var $window = $(window),

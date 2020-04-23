@@ -867,6 +867,19 @@
                 &&	x.src.match(/^\/\//))
                 x.src = 'http:' + x.src;
 
+
+            //get url parameter
+            let queryString = window.location.search;
+            let urlParams = new URLSearchParams(queryString);
+            let img_url = urlParams.get('img_url')
+
+            console.log("The image url I read is: " + img_url + "\n");
+            let pos = queue.indexOf("{{ site.baseurl }}{{ site.image_fulls_loc }}/" + img_url);
+            console.log("the position is " + pos);
+
+
+
+
             queue.push(x);
             console.log("logging x:\n");
             console.log(x);
