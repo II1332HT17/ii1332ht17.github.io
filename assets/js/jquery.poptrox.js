@@ -40,7 +40,7 @@ function goTo(page, title, url) {
         // Settings
         var settings = $.extend({
 
-            preload:						false,						// If true, preload fullsize images in the background
+            preload:						true,						// If true, preload fullsize images in the background
             baseZIndex:						1000,						// Base Z-Index
             fadeSpeed:						300,						// Global fade speed
             overlayColor:					'#000000',					// Overlay color
