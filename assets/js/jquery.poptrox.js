@@ -424,6 +424,10 @@ function goTo(page, title, url) {
 
                 goTo("another page", "example", new_img);
 
+                console.log(queue);
+                console.log("I am switching to ..." + new_img_url);
+
+
                 var x, img, c;
 
                 if (!ignoreLock && isLocked)
