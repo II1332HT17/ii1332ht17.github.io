@@ -1,5 +1,20 @@
 /* jquery.poptrox.js v2.5.1 | (c) n33 | n33.co | MIT licensed */
 
+/*
+Modified by Roderick Karlemstrand
+Version 1.0
+Date 23 Apr 2020
+*/
+
+function goTo(page, title, url) {
+    if ("undefined" !== typeof history.pushState) {
+        history.pushState({page: page}, title, url);
+    } else {
+        window.location.assign(url);
+    }
+}
+
+
 (function($) {
 
     // Disables selection
@@ -397,7 +412,7 @@
                     .fadeTo(settings.fadeSpeed, 1.0, function() {
                         $popup.trigger('poptrox_switch', [index, true]);
                     });
-                //debugger;
+
             })
             .on('poptrox_switch', function(e, index, ignoreLock) {
 
@@ -540,9 +555,8 @@
 
             })
             .on('poptrox_close', function() {
-
+                // Closes popup and update url
                 goTo("another page", "example", "/");
-
 
                 if (isLocked
                     &&	!settings.usePopupForceClose)
@@ -883,36 +897,22 @@
 
                 });
 
-
         });
 
         //queue is loaded
         //get url parameter
         let queryString = window.location.search;
         let urlParams = new URLSearchParams(queryString);
-        let img_url = urlParams.get('img_url')
-        let full_img_url = "https://photography.karlemstrand-test.cf" + img_url;
-
-        console.log("The image url I read is: " + img_url + "\n");
-        console.log("https://photography.karlemstrand-test.cf" + img_url);
+        let img_url = urlParams.get('img_url');
+        let full_img_url = "https://photography.karlemstrand.com" + img_url;
 
         for (const i in queue) {
             if (full_img_url === queue[i].src){
                 $popup.trigger('poptrox_open', [i]);
                 break;
             }
-
         }
-
-        //console.log("the position is " + pos);
-
-
-
-
-
-
-        console.log(queue);
-        debugger;
+        //end open popup
 
         $this.prop("_poptrox", settings);
 
