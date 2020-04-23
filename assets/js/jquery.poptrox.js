@@ -882,10 +882,11 @@
                     $popup.trigger('poptrox_open', [index]);
 
                 });
-            console.log(queue);
-            debugger;
+
 
         });
+        console.log(queue);
+        debugger;
 
         $this.prop("_poptrox", settings);
 
