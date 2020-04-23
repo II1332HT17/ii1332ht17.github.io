@@ -424,6 +424,7 @@ function goTo(page, title, url) {
 
                 goTo("another page", "example", new_img);
 
+                console.log("after goto")
                 console.log(queue);
                 console.log("I am switching to ..." + new_img_url);
 
@@ -919,6 +920,9 @@ function goTo(page, title, url) {
         let full_img_url = "https://photography.karlemstrand-test.cf" + img_url;
 
         for (const i in queue) {
+            console.log("queue is loaded, queue is \n")
+            console.log(queue);
+            console.log("current index is " + i);
             if (full_img_url === queue[i].src){
                 $popup.trigger('poptrox_open', [i]);
                 break;
