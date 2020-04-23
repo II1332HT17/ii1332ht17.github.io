@@ -904,7 +904,7 @@ function goTo(page, title, url) {
         let queryString = window.location.search;
         let urlParams = new URLSearchParams(queryString);
         let img_url = urlParams.get('img_url');
-        let full_img_url = "https://photography.karlemstrand.com" + img_url;
+        let full_img_url = "https://photography.karlemstrand-test.cf" + img_url;
 
         for (const i in queue) {
             if (full_img_url === queue[i].src){
