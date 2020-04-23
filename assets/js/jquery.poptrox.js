@@ -896,7 +896,11 @@
         console.log("https://photography.karlemstrand-test.cf" + img_url);
 
         for (const i in queue) {
-            console.log(i.src);
+            if (img_url == console.log(queue[i].src)){
+                $popup.trigger('poptrox_open', [i]);
+                break;
+            }
+            
         }
 
         //console.log("the position is " + pos);
