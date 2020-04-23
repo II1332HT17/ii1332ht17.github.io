@@ -418,7 +418,11 @@ function goTo(page, title, url) {
                 console.log("on switch");
                 console.log(index);
                 let new_img_url = queue[index].src;
-                console.log(new_img_url);
+                let url_array = new_img_url.split("/")
+                // ["https:", "", "photography.karlemstrand.com", "images", "fulls", "xxx.jpg"]
+                let new_img = url_array[5]
+
+                goTo("another page", "example", new_img);
 
                 var x, img, c;
 
