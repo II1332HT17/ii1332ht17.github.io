@@ -417,6 +417,8 @@ function goTo(page, title, url) {
             .on('poptrox_switch', function(e, index, ignoreLock) {
                 console.log("on switch");
                 console.log(index);
+                let new_img_url = queue[index].src;
+                console.log(new_img_url);
 
                 var x, img, c;
 
