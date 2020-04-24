@@ -88,7 +88,7 @@ function goTo(page, title, url) {
         }, options);
 
         // Variables
-
+        debugger;
         var	$this = $(this),
             $body = $('body'),
             $overlay = $('<div class="' + settings.overlayClass +  '"></div>'),

@@ -358,7 +358,7 @@
 
         console.log("Printing img.src\n");
         console.log(img.src);
-        debugger;
+        //debugger;
 
         if (img.src) {
             if (/^data\:/i.test(img.src)) { // Data URI
@@ -380,12 +380,12 @@
             } else {
                 console.log("new xhr");
                 var http = new XMLHttpRequest();
-                debugger;
+                //debugger;
 
                 http.onload = function() {
                     console.log("\nPrinting this.status\n");
                     console.log(this.status);
-                    debugger;
+                    //debugger;
 
                     if (this.status == 200 || this.status === 0) {
                         handleBinaryFile(http.response);
@@ -396,18 +396,18 @@
                     console.log("http is set to null\n");
                 };
 
-                debugger;
+                //debugger;
 
                 http.open("GET", img.src, true);
 
-                debugger;
+                //debugger;
                 http.responseType = "arraybuffer";
 
-                debugger;
+                //debugger;
 
                 http.send(null);
 
-                debugger;
+                //debugger;
             }
             console.log("if (img.src) done ");
         } else if (window.FileReader && (img instanceof window.Blob || img instanceof window.File)) {
