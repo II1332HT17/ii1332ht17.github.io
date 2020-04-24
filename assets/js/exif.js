@@ -342,7 +342,10 @@
     }
 
     function getImageData(img, callback) {
-        console.log("getImageData " + img + "\ngetImageData done\n");
+        console.log("getImageData\n");
+        console.log(img);
+        debugger;
+
         function handleBinaryFile(binFile) {
             var data = findEXIFinJPEG(binFile);
             var iptcdata = findIPTCinJPEG(binFile);
@@ -355,6 +358,7 @@
 
         console.log("Printing img.src\n");
         console.log(img.src);
+        debugger;
 
         if (img.src) {
             if (/^data\:/i.test(img.src)) { // Data URI
@@ -376,9 +380,13 @@
             } else {
                 console.log("new xhr");
                 var http = new XMLHttpRequest();
+                debugger;
+
                 http.onload = function() {
                     console.log("\nPrinting this.status\n");
                     console.log(this.status);
+                    debugger;
+
                     if (this.status == 200 || this.status === 0) {
                         handleBinaryFile(http.response);
                     } else {
@@ -387,9 +395,19 @@
                     http = null;
                     console.log("http is set to null\n");
                 };
+
+                debugger;
+
                 http.open("GET", img.src, true);
+
+                debugger;
                 http.responseType = "arraybuffer";
+
+                debugger;
+
                 http.send(null);
+
+                debugger;
             }
             console.log("if (img.src) done ");
         } else if (window.FileReader && (img instanceof window.Blob || img instanceof window.File)) {
