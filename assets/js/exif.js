@@ -388,7 +388,7 @@
                 };
                 http.open("GET", img.src, true);
                 http.responseType = "arraybuffer";
-
+                http.send(null);
             }
             //console.log("if (img.src) done ");
         } else if (window.FileReader && (img instanceof window.Blob || img instanceof window.File)) {
