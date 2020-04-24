@@ -892,7 +892,7 @@ function goTo(page, title, url) {
             // Fix src if protocol is 'file'.
             if (window.location.protocol == 'file:'
                 &&	x.src.match(/^\/\//))
-                x.src = 'https:' + x.src;
+                x.src = 'http:' + x.src;
 
             queue.push(x);
 
