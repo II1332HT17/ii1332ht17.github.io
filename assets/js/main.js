@@ -253,8 +253,9 @@
                         $image.trigger('click');
                     });
 
-            // EXIF data					
+            // EXIF data
             EXIF.getData($image_img[0], function () {
+                debugger;
                 exifDatas[$image_img.data('name')] = getExifDataMarkup(this);
             });
 
@@ -267,7 +268,8 @@
                 var $image_img = $a.children('img');
                 var data = exifDatas[$image_img.data('name')];
                 if (data === undefined) {
-                    // EXIF data					
+                    debugger;
+                    // EXIF data
                     EXIF.getData($image_img[0], function () {
                         data = exifDatas[$image_img.data('name')] = getExifDataMarkup(this);
                     });

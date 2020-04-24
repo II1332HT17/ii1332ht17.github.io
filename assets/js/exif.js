@@ -344,7 +344,7 @@
     function getImageData(img, callback) {
         console.log("getImageData\n");
         console.log(img);
-        debugger;
+
 
         function handleBinaryFile(binFile) {
             var data = findEXIFinJPEG(binFile);
