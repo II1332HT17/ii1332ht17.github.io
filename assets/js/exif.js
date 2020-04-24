@@ -342,6 +342,7 @@
     }
 
     function getImageData(img, callback) {
+        console.log("getImageData " + img + "\ngetImageData done\n");
         function handleBinaryFile(binFile) {
             var data = findEXIFinJPEG(binFile);
             var iptcdata = findIPTCinJPEG(binFile);
@@ -352,18 +353,18 @@
             }
         }
 
-        //console.log("Printing img.src\n");
-        //console.log(img.src);
+        console.log("Printing img.src\n");
+        console.log(img.src);
 
         if (img.src) {
             if (/^data\:/i.test(img.src)) { // Data URI
-                //console.log("data uri\n");
+                console.log("data uri\n");
 
                 var arrayBuffer = base64ToArrayBuffer(img.src);
                 handleBinaryFile(arrayBuffer);
 
             } else if (/^blob\:/i.test(img.src)) { // Object URL
-                //console.log("obj url\n");
+                console.log("obj url\n");
 
                 var fileReader = new FileReader();
                 fileReader.onload = function(e) {
@@ -373,24 +374,24 @@
                     fileReader.readAsArrayBuffer(blob);
                 });
             } else {
-                //console.log("new xhr");
+                console.log("new xhr");
                 var http = new XMLHttpRequest();
                 http.onload = function() {
-                    //console.log("\nPrinting this.status\n");
-                    //console.log(this.status);
+                    console.log("\nPrinting this.status\n");
+                    console.log(this.status);
                     if (this.status == 200 || this.status === 0) {
                         handleBinaryFile(http.response);
                     } else {
                         throw "Could not load image";
                     }
                     http = null;
-                    //console.log("http is set to null\n");
+                    console.log("http is set to null\n");
                 };
                 http.open("GET", img.src, true);
                 http.responseType = "arraybuffer";
                 http.send(null);
             }
-            //console.log("if (img.src) done ");
+            console.log("if (img.src) done ");
         } else if (window.FileReader && (img instanceof window.Blob || img instanceof window.File)) {
             var fileReader = new FileReader();
             fileReader.onload = function(e) {
